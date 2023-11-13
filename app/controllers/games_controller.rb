@@ -6,5 +6,8 @@ class GamesController < ApplicationController
     random_letters.each do |letter|
       @letters << letter
     end
+
+    @word = params[:word]
+    puts 'Congrats!' if url_exist?("https://api.dictionaryapi.dev/api/v2/entries/en/#{@word}")
   end
 end

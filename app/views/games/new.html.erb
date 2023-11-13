@@ -1,6 +1,17 @@
 <div>
   <h1>New Game<h2>
 </div>
-<p>
-  <%= @letters %>
-</p>
+
+<p>Can you create a word out of these letters:</p>
+
+ <div class="letter">
+    <% @letters.each do |letter| %>
+      <%= letter %>
+    <% end %>
+  </div>
+
+<form action="/new" method="get">
+  <label for="word_id">Possible word: </label>
+  <input id="word_id" type="text" name="word" placeholder="Create an existing word...">
+  <input type="submit" value="Submit!">
+</form>
